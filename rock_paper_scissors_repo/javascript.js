@@ -53,7 +53,7 @@ function getUserChoice()
 function checkWhoWin(){
     let ComputerSelect = computerSelection();
     let UserSelect = getUserChoice();
-    console.log(UserSelect,ComputerSelect);
+    console.log(`The computer chooses ${ComputerSelect}`);
     if(ComputerSelect === UserSelect)
     {
         return "draw";
@@ -81,6 +81,35 @@ function checkWhoWin(){
     }
     return "Loss";
 }
+
+function score(){
+    let result;
+    let draws = 0;
+    let wins = 0;
+    let losses = 0;
+    let loop = true;
+    while(loop)
+    {
+        result = checkWhoWin();
+        switch(result)
+        {
+            case "draw":
+                draws++;
+                break;
+            case "Win":
+                wins++;
+                break;
+            case "Loss":
+                losses++;
+                break;
+        }
+        console.log(`Wins = ${wins} Losses = ${losses} draws = ${draws}`);
+        loop = confirm("Do you want to continue");
+    }
+    return 0;
+}
+
+score();
 
 
 
