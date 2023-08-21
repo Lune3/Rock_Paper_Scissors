@@ -83,6 +83,7 @@ function checkWhoWin(){
 }
 
 function score(){
+    alert("Please open console to play the game");
     let result;
     let draws = 0;
     let wins = 0;
@@ -110,18 +111,3 @@ function score(){
 }
 
 score();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
