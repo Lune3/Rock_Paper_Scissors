@@ -31,7 +31,7 @@ function getUserChoice()
 
     if(UserChoice === "Rock" || UserChoice === "Paper" || UserChoice === "Scissors")
     {   
-        return ;
+        return UserChoice;
     }
     
     if(UserChoice !== "Rock" || UserChoice !== "Paper" || UserChoice !== "Scissors")
@@ -42,12 +42,48 @@ function getUserChoice()
             UserChoice = prompt("Please choose between Rock, Paper, Scissors");
             UserChoice = UserChoice.charAt(0).toUpperCase() + UserChoice.slice(1);
             if(UserChoice === "Rock" || UserChoice === "Paper" || UserChoice === "Scissors")
-            {
+            {   
+                return UserChoice;
                 loop = false;
             }
         }
     }
 }
+
+function checkWhoWin(){
+    let ComputerSelect = computerSelection();
+    let UserSelect = getUserChoice();
+    console.log(UserSelect,ComputerSelect);
+    if(ComputerSelect === UserSelect)
+    {
+        return "draw";
+    }
+    switch (UserSelect)
+    {
+        case "Rock":
+            if(ComputerSelect == "Scissors")
+            {
+                return "Win";
+            }
+            break;
+        case "Paper":
+            if(ComputerSelect == "Rock")
+            {
+                return "Win";
+            }
+            break;
+        case "Scissors":
+            if(ComputerSelect == "Paper")
+            {
+                return "Win";
+            }
+            break;
+    }
+    return "Loss";
+}
+
+
+
 
 
 
