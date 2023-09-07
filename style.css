@@ -1,7 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Gloria+Hallelujah&display=swap');
+
+
 body{
+    background-color: rgb(196, 153, 98);
+    
+}
+
+.main_heading{
+    text-align: center;
+    font-family: 'DynaPuff', cursive;
+    font-weight: 400;
+    font-size: 38px;
+}
+
+.gamePart{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    min-height: 500px;
 }
+
+.buttons{
+    display: flex;
+    gap: 100px;
+}
+
+.buttons button{
+    width:  150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 2px 5px;
+}
+
+.buttons button p{
+    font-size: 28px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.score{
+    display: flex;
+    gap: 105px;
+    
+}
+
+.score p{
+    font-size: 36px;
+    font-family: 'DynaPuff', cursive;
+}
+
