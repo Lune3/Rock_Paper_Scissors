@@ -25,29 +25,28 @@ function computerSelection()
 
 function getUserChoice()
 {
-    let UserChoice = prompt("Rock, Paper, Scissors which one do you want to play against computer");
-    UserChoice = UserChoice.toLowerCase();
-    UserChoice = UserChoice.charAt(0).toUpperCase() + UserChoice.slice(1);
+    let userChoices = document.querySelectorAll(".buttons > button");
+    let text;
 
-    if(UserChoice === "Rock" || UserChoice === "Paper" || UserChoice === "Scissors")
-    {   
-        return UserChoice;
-    }
-    
-    if(UserChoice !== "Rock" || UserChoice !== "Paper" || UserChoice !== "Scissors")
-    {
-        let loop = true;
-        while(loop)
-        {
-            UserChoice = prompt("Please choose between Rock, Paper, Scissors");
-            UserChoice = UserChoice.charAt(0).toUpperCase() + UserChoice.slice(1);
-            if(UserChoice === "Rock" || UserChoice === "Paper" || UserChoice === "Scissors")
-            {   
-                return UserChoice;
-                loop = false;
+    userChoices.forEach((choice) => {
+        choice.addEventListener('click',() =>{
+            switch(choice.innerText)
+            {
+                case "Rock":
+                    text = "Rock";
+                    break;
+                case "Paper":
+                    text = "Paper";
+                    break;
+                case "Scissors":
+                    text = "Scissors";
+                    break;
             }
-        }
-    }
+        })
+        console.log(text);
+    })
+
+    return text;
 }
 
 function checkWhoWin(){
@@ -110,4 +109,6 @@ function score(){
     return 0;
 }
 
-score();
+
+getUserChoice();
+// score();
