@@ -1,3 +1,8 @@
+let takes = {
+    user : "h",
+    computer : ""
+};
+
 function getRandomNumber()
 {
     let random = Math.floor(Math.random() * 3) + 1;
@@ -23,35 +28,46 @@ function computerSelection()
     return computerChoses;
 }
 
+function userChoice(rock,paper)
+{
+    if(rock === true)
+    {
+        takes.user = "Rock";
+    }
+    else if(paper === true)
+    {
+        takes.user = "Paper";
+    }
+    else
+    {
+        return "Scissors";
+    }
+}
 function getUserChoice()
 {
-    let userChoices = document.querySelectorAll(".buttons > button");
-    let text;
-
+    let userChoices = document.querySelectorAll(".buttons > button,.buttons > p");
     userChoices.forEach((choice) => {
-        choice.addEventListener('click',() =>{
-            switch(choice.innerText)
+        choice.addEventListener('click',function(){
+            switch(this.className)
             {
-                case "Rock":
-                    text = "Rock";
+                case "rock":
+                    userChoice(true,0);
                     break;
-                case "Paper":
-                    text = "Paper";
+                case "paper":
+                    userChoice(0,true);
                     break;
-                case "Scissors":
-                    text = "Scissors";
+                case "scissors":
+                    userChoice(0,0);
                     break;
             }
         })
-        console.log(text);
     })
-
-    return text;
 }
 
+
 function checkWhoWin(){
-    let ComputerSelect = computerSelection();
-    let UserSelect = getUserChoice();
+    // let ComputerSelect = computerSelection();
+    // let UserSelect = getUserChoice();
     console.log(`The computer chooses ${ComputerSelect}`);
     if(ComputerSelect === UserSelect)
     {
@@ -111,4 +127,5 @@ function score(){
 
 
 getUserChoice();
+console.log(takes.user);
 // score();
