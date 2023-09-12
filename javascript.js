@@ -23,22 +23,6 @@ function computerSelection()
     return computerChoses;
 }
 
-function userChoice(rock,paper)
-{
-    if(rock === true)
-    {
-        takes.user = "Rock";
-    }
-    else if(paper === true)
-    {
-        takes.user = "Paper";
-    }
-    else
-    {
-        return "Scissors";
-    }
-}
-
 function getUserChoice()
 {
     let userChoices = document.querySelectorAll(".buttons > button,.buttons > p");
@@ -83,10 +67,21 @@ function checkWhoWin(ComputerSelect,UserSelect){
 }
 
 function score(){
+    const wins = document.querySelector('.player');
+    let score = parseInt(wins.innerText);
+    const temp = document.querySelector('.rock');
     
+    temp.addEventListener('click',() =>{
+        score++;
+        wins.innerText = score;
+    })
+    
+    
+
 }
 
 
-getUserChoice();
+// getUserChoice();
+score();
 
 // score();
