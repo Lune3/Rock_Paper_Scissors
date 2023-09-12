@@ -1,4 +1,4 @@
-let takes = {
+const takes = {
     user : "h",
     computer : ""
 };
@@ -46,23 +46,20 @@ function userChoice(rock,paper)
 function getUserChoice()
 {
     let userChoices = document.querySelectorAll(".buttons > button,.buttons > p");
-    userChoices.forEach((choice) => {
-        choice.addEventListener('click',function(){
-            switch(this.className)
-            {
-                case "rock":
-                    userChoice(true,0);
-                    break;
-                case "paper":
-                    userChoice(0,true);
-                    break;
-                case "scissors":
-                    userChoice(0,0);
-                    break;
-            }
+    userChoices.forEach((button) => {
+        button.addEventListener('click',(click) => {
+            storeUserChoice(click.target.innerText);
         })
     })
+    
 }
+
+function storeUserChoice(str)
+{
+    takes.user = str;
+    console.log(takes.user);
+}
+
 
 
 function checkWhoWin(){
@@ -127,5 +124,5 @@ function score(){
 
 
 getUserChoice();
-console.log(takes.user);
+
 // score();
