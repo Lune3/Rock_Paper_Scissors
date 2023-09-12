@@ -1,8 +1,3 @@
-const takes = {
-    user : "h",
-    computer : ""
-};
-
 function getRandomNumber()
 {
     let random = Math.floor(Math.random() * 3) + 1;
@@ -43,29 +38,22 @@ function userChoice(rock,paper)
         return "Scissors";
     }
 }
+
 function getUserChoice()
 {
     let userChoices = document.querySelectorAll(".buttons > button,.buttons > p");
     userChoices.forEach((button) => {
         button.addEventListener('click',(click) => {
-            storeUserChoice(click.target.innerText);
+            let userChooses = click.target.innerText;
+            checkWhoWin(computerSelection(),userChooses);
         })
     })
-    
-}
-
-function storeUserChoice(str)
-{
-    takes.user = str;
-    console.log(takes.user);
 }
 
 
-
-function checkWhoWin(){
-    // let ComputerSelect = computerSelection();
-    // let UserSelect = getUserChoice();
+function checkWhoWin(ComputerSelect,UserSelect){
     console.log(`The computer chooses ${ComputerSelect}`);
+    console.log(`The player chooses ${UserSelect}`);
     if(ComputerSelect === UserSelect)
     {
         return "draw";
@@ -95,31 +83,7 @@ function checkWhoWin(){
 }
 
 function score(){
-    alert("Please open console to play the game");
-    let result;
-    let draws = 0;
-    let wins = 0;
-    let losses = 0;
-    let loop = true;
-    while(loop)
-    {
-        result = checkWhoWin();
-        switch(result)
-        {
-            case "draw":
-                draws++;
-                break;
-            case "Win":
-                wins++;
-                break;
-            case "Loss":
-                losses++;
-                break;
-        }
-        console.log(`Wins = ${wins} Losses = ${losses} draws = ${draws}`);
-        loop = confirm("Do you want to continue");
-    }
-    return 0;
+    
 }
 
 
