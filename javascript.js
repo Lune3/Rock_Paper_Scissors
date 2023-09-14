@@ -29,7 +29,7 @@ function getUserChoice()
     userChoices.forEach((button) => {
         button.addEventListener('click',(click) => {
             let userChooses = click.target.innerText;
-            checkWhoWin(computerSelection(),userChooses);
+            score(checkWhoWin(computerSelection(),userChooses));
         })
     })
 }
@@ -45,19 +45,21 @@ function checkWhoWin(ComputerSelect,UserSelect){
     switch (UserSelect)
     {
         case "Rock":
-            if(ComputerSelect == "Scissors")
-            {
+            if(ComputerSelect === "Scissors")
+            {   
+                
                 return "Win";
+                
             }
             break;
         case "Paper":
-            if(ComputerSelect == "Rock")
+            if(ComputerSelect === "Rock")
             {
                 return "Win";
             }
             break;
         case "Scissors":
-            if(ComputerSelect == "Paper")
+            if(ComputerSelect === "Paper")
             {
                 return "Win";
             }
@@ -66,22 +68,33 @@ function checkWhoWin(ComputerSelect,UserSelect){
     return "Loss";
 }
 
-function score(){
-    const wins = document.querySelector('.player');
-    let score = parseInt(wins.innerText);
-    const temp = document.querySelector('.rock');
+function score(winner){
     
-    temp.addEventListener('click',() =>{
-        score++;
-        wins.innerText = score;
-    })
-    
-    
+    const player = document.querySelector(".player");
+    const computer = document.querySelector(".counter.computer");
+    const draws = document.querySelector(".draw");
 
+    if(winner === "Win")
+    {   
+        let wins = parseInt(player.innerText);
+        wins++;
+        player.innerText = wins;
+        
+    }
+    if(winner === "Loss")
+    {
+        let loss = parseInt(computer.innerText);
+        loss++;
+        computer.innerText = loss;
+    }
+    if(winner === "draw")
+    {
+        let equal = parseInt(draws.innerText);
+        equal++;
+        draws.innerText = equal;
+    }
 }
 
 
-// getUserChoice();
-score();
+getUserChoice();
 
-// score();
