@@ -79,7 +79,6 @@ function score(winner){
         let wins = parseInt(player.innerText);
         wins++;
         player.innerText = wins;
-        
     }
     if(winner === "Loss")
     {

@@ -53,5 +53,17 @@ body{
 .counter{
     font-size: 48px;
     font-family: 'DynaPuff', cursive;
+    text-align: center;
 }
+
+.imgSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 450px;
+}
+
+
+
 
