@@ -29,15 +29,17 @@ function getUserChoice()
     userChoices.forEach((button) => {
         button.addEventListener('click',(click) => {
             let userChooses = click.target.innerText;
-            score(checkWhoWin(computerSelection(),userChooses));
+            let machineSelects = computerSelection();
+            score(checkWhoWin(machineSelects,userChooses));
+            imageUpdater(machineSelects,userChooses);
         })
     })
 }
 
 
 function checkWhoWin(ComputerSelect,UserSelect){
-    console.log(`The computer chooses ${ComputerSelect}`);
     console.log(`The player chooses ${UserSelect}`);
+    console.log(`The computer chooses ${ComputerSelect}`);
     if(ComputerSelect === UserSelect)
     {
         return "draw";
@@ -47,9 +49,7 @@ function checkWhoWin(ComputerSelect,UserSelect){
         case "Rock":
             if(ComputerSelect === "Scissors")
             {   
-                
                 return "Win";
-                
             }
             break;
         case "Paper":
@@ -64,8 +64,17 @@ function checkWhoWin(ComputerSelect,UserSelect){
                 return "Win";
             }
             break;
-    }
-    return "Loss";
+        }
+        return "Loss";
+}
+
+function imageUpdater(computer,player) // displays images of selection of player and computer
+{
+    const playerSelectionIMG = document.querySelector(".playerSelectionIMG");
+    const computerSelectionIMG = document.querySelector(".computerSelectionIMG");
+    computerSelectionIMG.innerText = computer;
+    playerSelectionIMG.innerText = player; 
+
 }
 
 function score(winner){
