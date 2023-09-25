@@ -23,7 +23,7 @@ function computerSelection()
     return computerChoses;
 }
 
-function getUserChoice()
+function getUserChoice()    
 {
     let userChoices = document.querySelectorAll(".buttons > button,.buttons > p");
     userChoices.forEach((button) => {
@@ -77,7 +77,7 @@ function imageUpdater(computer,player) // displays images of selection of player
 
 }
 
-function score(winner){
+function score(winner){ // updates score on the scoreboard for the player and the computer
     
     const player = document.querySelector(".player");
     const computer = document.querySelector(".counter.computer");
@@ -87,7 +87,7 @@ function score(winner){
     {   
         let wins = parseInt(player.innerText);
         wins++;
-        player.innerText = wins;
+        player.innerText = wins;    //puts the int value in the html
     }
     if(winner === "Loss")
     {
