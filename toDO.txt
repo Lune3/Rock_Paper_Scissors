@@ -1,0 +1,10 @@
+So the game is divided in 3 part
+1. Tell the rules and for how many wins the game will be played.
+2. Both side playing the game.
+3. Telling the winner of the game.
+
+
+Current task
+1.Get buttons, heading, and score on the webpage. -> done 
+2.Add basic css for now. -> done
+3.get rock,paper and scissor button to work.
