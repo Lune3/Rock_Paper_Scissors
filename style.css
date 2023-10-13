@@ -68,6 +68,7 @@ body{
 .playerSelectionIMG img{
     width: 250px;
     height: auto;
+    background-color: rgb(196, 153, 98);
 }
 
 .computerSelectionIMG img{

@@ -70,10 +70,31 @@ function checkWhoWin(ComputerSelect,UserSelect){
 
 function imageUpdater(computer,player) // displays images of selection of player and computer
 {
-    const playerSelectionIMG = document.querySelector(".playerSelectionIMG");
-    const computerSelectionIMG = document.querySelector(".computerSelectionIMG");
-    computerSelectionIMG.innerText = computer;
-    playerSelectionIMG.innerText = player; 
+    switch(player)
+    {
+        case "Rock":
+            document.getElementById("fir").src = "images/Rock.jpg";
+            break;
+        case "Paper":
+            document.getElementById("fir").src = "images/paper.jpg";
+            break;
+        case "Scissors":
+            document.getElementById("fir").src = "images/scissors.jpg";
+            break;
+    }
+
+    switch(computer)
+    {
+        case "Rock":
+            document.getElementById("sec").src = "images/Rock.jpg";
+            break;
+        case "Paper":
+            document.getElementById("sec").src = "images/paper.jpg";
+            break;
+        case "Scissors":
+            document.getElementById("sec").src = "images/scissors.jpg";
+            break;
+    }
 
 }
 
