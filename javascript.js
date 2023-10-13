@@ -73,26 +73,26 @@ function imageUpdater(computer,player) // displays images of selection of player
     switch(player)
     {
         case "Rock":
-            document.getElementById("fir").src = "images/Rock.jpg";
+            document.getElementById("fir").src = "images/Rock.png";
             break;
         case "Paper":
-            document.getElementById("fir").src = "images/paper.jpg";
+            document.getElementById("fir").src = "images/paper.png";
             break;
         case "Scissors":
-            document.getElementById("fir").src = "images/scissors.jpg";
+            document.getElementById("fir").src = "images/scissors.png";
             break;
     }
 
     switch(computer)
     {
         case "Rock":
-            document.getElementById("sec").src = "images/Rock.jpg";
+            document.getElementById("sec").src = "images/Rock.png";
             break;
         case "Paper":
-            document.getElementById("sec").src = "images/paper.jpg";
+            document.getElementById("sec").src = "images/paper.png";
             break;
         case "Scissors":
-            document.getElementById("sec").src = "images/scissors.jpg";
+            document.getElementById("sec").src = "images/scissors.png";
             break;
     }
 
